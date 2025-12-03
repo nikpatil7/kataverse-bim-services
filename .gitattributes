@@ -1,0 +1,5 @@
+# Disable Git LFS for GLB/GLTF so Vercel serves real binaries
+*.glb -filter -diff -merge -text
+*.gltf -filter -diff -merge -text
+Frontend/public/models/*.glb -filter -diff -merge -text
+Frontend/public/models/*.gltf -filter -diff -merge -text

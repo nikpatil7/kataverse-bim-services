@@ -49,12 +49,6 @@ Thumbs.db
 /coverage
 coverage/
 
-# Large 3D model files - too large for GitHub
-*.glb
-*.gltf
-Frontend/public/models/*.glb
-Frontend/public/models/*.gltf
-
 # Git LFS config (not using)
 .gitattributes
 

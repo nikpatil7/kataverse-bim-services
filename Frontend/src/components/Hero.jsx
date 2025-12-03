@@ -269,8 +269,7 @@ function LazyThreeContainer() {
             </div>
           }
         >
-          {/* 3D model temporarily disabled - GitHub Releases don't support CORS */}
-          {/* Will add model via proper CDN after deployment is stable */}
+          <ThreeHero modelUrl="/models/spie_ibexhouse_chiller_plantroom.glb" />
         </Suspense>
       ) : (
         <img

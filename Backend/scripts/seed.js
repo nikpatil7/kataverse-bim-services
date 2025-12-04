@@ -9,24 +9,24 @@ async function run() {
 
   const projects = [
     {
-      title: '45-Story Commercial Tower',
+      title: '25-Story Commercial Tower',
       category: 'Commercial',
-      description: 'Complete MEP coordination for high-rise commercial project with advanced clash detection',
+      description: 'MEP coordination and clash detection for 25-story commercial office tower in Oregon',
       images: [],
-      tags: ['MEP Coordination', 'Clash Detection', 'High-Rise'],
-      metrics: { 'Clash Reduction': '87%', 'Floors': '45', 'Timeline': '18 months', 'Cost Saved': '$2.5M' },
-      client: { name: 'ABC Construction', testimonial: 'Exceptional coordination and accuracy', rating: 5 },
-      featured: true,
+      tags: ['MEP Coordination', 'Clash Detection', 'Commercial'],
+      metrics: { 'Floors': '25', 'Timeline': '6 months', 'Cost Saved': '$1M' },
+      client: { name: 'General Contractor - Oregon', testimonial: 'Efficient coordination with significant cost savings', rating: 5 },
+      country: 'USA',
     },
     {
-      title: 'Luxury Residential Complex',
+      title: 'Residential Complex',
       category: 'Residential',
-      description: 'Full BIM modeling and coordination for 200-unit luxury residential development',
+      description: 'Full BIM modeling and coordination for 60-unit residential development in Virginia',
       images: [],
       tags: ['BIM Modeling', 'Residential', 'MEP'],
-      metrics: { 'Units': '200', 'Buildings': '4', 'Timeline': '12 months', 'Cost Saved': '$350K' },
-      client: { name: 'Premier Developers', testimonial: 'Professional service with attention to detail', rating: 5 },
-      featured: true,
+      metrics: { 'Units': '60', 'Buildings': '1', 'Timeline': '2 months' },
+      client: { name: 'Subcontractors - Virginia', testimonial: 'Professional service with attention to detail', rating: 5 },
+      country: 'USA',
     },
     {
       title: 'Manufacturing Facility Expansion',
@@ -36,7 +36,7 @@ async function run() {
       tags: ['Shop Drawings', 'Industrial', 'As-Built'],
       metrics: { 'Area': '150,000 sq ft', 'Systems': 'HVAC, Electrical, Plumbing', 'Timeline': '8 months', 'Accuracy': '99.5%' },
       client: { name: 'Industrial Solutions Ltd', testimonial: 'Precise documentation helped us avoid costly installation errors', rating: 5 },
-      featured: true,
+      country: 'USA',
     },
     {
       title: 'Educational Campus Development',
@@ -46,17 +46,7 @@ async function run() {
       tags: ['BIM Modeling', 'Educational', 'Multi-Building'],
       metrics: { 'Buildings': '8', 'Students': '5000', 'Timeline': '24 months', 'Clash Reduction': '92%' },
       client: { name: 'State Education Board', testimonial: 'Outstanding coordination across multiple buildings', rating: 5 },
-      featured: false,
-    },
-    {
-      title: 'Hospital HVAC Retrofit',
-      category: 'Commercial',
-      description: 'Critical HVAC system retrofit with minimal disruption to hospital operations',
-      images: [],
-      tags: ['HVAC', 'Healthcare', 'Retrofit'],
-      metrics: { 'Beds': '500', 'Systems': 'HVAC, Medical Gas', 'Downtime': '0 hours', 'Timeline': '6 months' },
-      client: { name: 'Metro Healthcare', testimonial: 'Seamless execution with zero operational downtime', rating: 5 },
-      featured: false,
+      country: 'USA',
     },
     {
       title: 'Mixed-Use Development',
@@ -65,20 +55,12 @@ async function run() {
       images: [],
       tags: ['Mixed-Use', 'MEP Design', 'Coordination'],
       metrics: { 'Area': '500,000 sq ft', 'Zones': 'Retail, Office, Residential', 'Timeline': '20 months', 'Cost Saved': '$1.8M' },
-      client: { name: 'Urban Developers Inc', testimonial: 'Complex project delivered with precision', rating: 5 },
-      featured: false,
+      client: { name: 'Subcontractors - Michigan', testimonial: 'Complex project delivered with precision', rating: 5 },
+      country: 'USA',
     },
   ];
 
   const testimonials = [
-    {
-      quote: "KataVerse's BIM expertise transformed our project workflow. Exceptional coordination and precision. They delivered ahead of schedule with zero clashes.",
-      author: 'Rajesh Kumar',
-      role: 'Project Manager',
-      company: 'ABC Construction',
-      rating: 5,
-      featured: true,
-    },
     {
       quote: 'Outstanding MEP coordination. Their clash detection reduced rework significantly and saved us millions in potential delays.',
       author: 'Sarah Johnson',
@@ -94,14 +76,6 @@ async function run() {
       company: 'Industrial Solutions Ltd',
       rating: 5,
       featured: true,
-    },
-    {
-      quote: 'Best BIM coordination service we have worked with. Their attention to detail and quick turnaround is impressive.',
-      author: 'Michael Chen',
-      role: 'Director of Engineering',
-      company: 'Metro Healthcare',
-      rating: 5,
-      featured: false,
     },
   ];
 

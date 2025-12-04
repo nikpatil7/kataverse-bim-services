@@ -74,6 +74,13 @@ export default function Testimonials() {
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Trusted by leading construction firms and architects worldwide
           </p>
+          {/* Coming Soon Badge */}
+          <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
+            <svg className="w-4 h-4 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+            </svg>
+            Client testimonials coming soon
+          </div>
         </FadeIn>
 
         {/* Status Messages */}
@@ -94,6 +101,19 @@ export default function Testimonials() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
+          {/* Blur overlay for placeholder effect */}
+          <div className="absolute inset-0 backdrop-blur-sm bg-white/40 z-20 rounded-2xl flex items-center justify-center pointer-events-none">
+            <div className="text-center px-6">
+              <div className="inline-flex items-center gap-3 bg-white/90 backdrop-blur-md px-6 py-4 rounded-xl shadow-lg border border-gray-200">
+                <svg className="w-6 h-6 text-primary animate-spin" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span className="text-lg font-semibold text-secondary">Client Reviews Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          
           <AnimatePresence mode="wait">
             {current && (
               <motion.div

@@ -48,6 +48,11 @@ const projectSchema = new mongoose.Schema({
   featured: {
     type: Boolean,
     default: false
+  },
+  country: {
+    type: String,
+    enum: ['USA', 'UK'],
+    default: 'USA'
   }
 }, {
   timestamps: true

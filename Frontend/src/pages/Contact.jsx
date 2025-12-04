@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa';
+// eslint-disable-next-line no-unused-vars
 import { submitContactForm } from '../utils/api';
 import SEO from '../components/SEO';
 import siteConfig from '../config/siteConfig';
@@ -15,6 +16,7 @@ export default function Contact() {
   });
 
   const [loading, setLoading] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
   const [toast, setToast] = useState({ type: '', message: '', visible: false });
@@ -58,6 +60,19 @@ export default function Contact() {
       return;
     }
 
+    // ============================================
+    // EMAIL FUNCTIONALITY TEMPORARILY DISABLED
+    // ============================================
+    // To re-enable: uncomment the try-catch block below
+    setLoading(false);
+    setToast({ 
+      type: 'success', 
+      message: 'Thank you for your interest! Please reach us directly at Admin@KataVerseBIMServices.onmicrosoft.com or +91 9359584867 for immediate assistance.', 
+      visible: true 
+    });
+    return;
+
+    /* 
     // TODO: re-enable reCAPTCHA when production keys are ready
     const recaptchaToken = null;
 
@@ -87,6 +102,7 @@ export default function Contact() {
     } finally {
       setLoading(false);
     }
+    */
   };
 
   return (

@@ -139,7 +139,6 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-secondary mb-1">Email</h3>
                     <p className="text-gray-600">{siteConfig.contact.email}</p>
-                    <p className="text-gray-600">{siteConfig.contact.supportEmail}</p>
                   </div>
                 </div>
 
@@ -163,11 +162,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-secondary mb-1">Office</h3>
-                    <p className="text-gray-600">
-                      Vivesta Purnanagar<br />
-                      Pune, Maharashtra<br />
-                      India
-                    </p>
+                    <p className="text-gray-600">{siteConfig.contact.address}</p>
                   </div>
                 </div>
               </div>

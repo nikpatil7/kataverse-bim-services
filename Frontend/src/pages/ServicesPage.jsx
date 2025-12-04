@@ -7,11 +7,11 @@ const servicesData = [
     title: 'BIM Modeling',
     description: 'Comprehensive 3D modeling services for residential, commercial, and high-rise projects. Our expert modelers deliver precise, detailed models that serve as the foundation for successful project execution.',
     features: [
-      'Architectural BIM Modeling',
+      'MEPF BIM Modeling',
       'Structural BIM Modeling',
       'Residential & Commercial Projects',
       'As-Built Documentation',
-      'LOD 100-500 Modeling',
+      'LOD 300-500 Modeling',
       'Parametric Design'
     ],
     benefits: [

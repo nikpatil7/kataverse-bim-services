@@ -14,7 +14,7 @@ const services = [
     icon: <FaProjectDiagram />,
     title: 'Coordination & Collaboration',
     description: 'Ensuring seamless collaboration between different MEP disciplines to avoid clashes and rework.',
-    features: ['Multi-discipline Coordination', 'Design & Site Team Collaboration', 'Clash Avoidance']
+    features: ['Multi-discipline Coordination', 'Design & Site Team Collaboration', 'Clash Detection and Resolution']
   },
   {
     icon: <FaCube />,

@@ -4,10 +4,9 @@ import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
 import StaggerContainer, { StaggerItem } from './animations/StaggerContainer';
 
 const stats = [
-  { icon: <FaCheckCircle />, number: 150, suffix: '+', label: 'Projects Completed' },
-  { icon: <FaAward />, number: 8, suffix: '+', label: 'Years Experience' },
-  { icon: <FaUsers />, number: 25, suffix: '+', label: 'Team Members' },
-  { icon: <FaHandshake />, number: 98, suffix: '%', label: 'Client Satisfaction' }
+  { icon: <FaCheckCircle />, number: 100, suffix: '+', label: 'Projects Completed' },
+  { icon: <FaHandshake />, number: 98, suffix: '%', label: 'Client Satisfaction' },
+  { icon: <FaAward />, number: 8, suffix: '+', label: 'Years Experience' }
 ];
 
 // Animated Counter Component
@@ -73,7 +72,7 @@ export default function Stats() {
       </div>
 
       <div className="container-custom relative z-10">
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
           {stats.map((stat, index) => (
             <StaggerItem key={index}>
               <motion.div 

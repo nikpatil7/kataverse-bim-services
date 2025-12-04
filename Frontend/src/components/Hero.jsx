@@ -108,8 +108,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-sm sm:text-base md:text-lg mb-8 text-gray-200 max-w-xl leading-relaxed mx-auto lg:mx-0"
             >
-              Precision BIM Modeling • MEP Coordination • Clash Detection • 3D Visualization — helping contractors,
-              architects, and MEP consultants prevent clashes and costly rework before construction begins.
+              Precision BIM Modeling • MEP Coordination • Clash Detection • 3D Visualization — Helping Contractors, Subcontractors and Engineers prevent clashes and costly rework before construction begins.
             </Motion.p>
 
             {/* CTA Buttons */}
@@ -146,12 +145,11 @@ export default function Hero() {
               className="pt-4 border-t border-cyan-500/30 max-w-md mx-auto lg:mx-0"
             >
               <p className="text-[11px] text-gray-400 mb-3 font-mono">
-                ▲ 150+ projects coordinated · ▲ 8+ years BIM experience · ▲ 98% client satisfaction
+                ▲ 100+ projects coordinated · ▲ 8+ years BIM experience · ▲ 98% client satisfaction
               </p>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-3 gap-3">
                 {[
-                  { value: '150+', label: 'Projects Completed' },
-                  { value: '$20M+', label: 'Cost Savings' },
+                  { value: '100+', label: 'Projects Completed' },
                   { value: '98%', label: 'Client Satisfaction' },
                   { value: '8+', label: 'Years Experience' }
                 ].map((stat, index) => (
@@ -205,7 +203,7 @@ export default function Hero() {
                 </div>
                 <div>
                   <p className="text-cyan-300 mb-0.5">Sectors</p>
-                  <p>High-Rise · Industrial</p>
+                  <p>Commercial . Industrial . Residential</p>
                 </div>
               </div>
             </div>

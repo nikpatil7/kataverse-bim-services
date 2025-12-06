@@ -22,8 +22,8 @@ export default function Home() {
         setError('');
         const res = await getProjects(null, 1, 10); // Get first 10 projects
         const list = res.data || [];
-        const featuredOnly = list.filter(p => p.featured);
-        setFeatured((featuredOnly.length ? featuredOnly : list).slice(0, 3));
+        // Show first 3 projects without featured filtering
+        setFeatured(list.slice(0, 3));
       } catch (e) {
         setError(e.response?.data?.error || 'Failed to load featured projects');
       } finally {
@@ -76,7 +76,7 @@ export default function Home() {
         <div className="container-custom">
           <FadeIn className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary">
-              Featured Projects
+              Recent Projects
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Explore our portfolio of successful BIM implementations across diverse sectors
@@ -115,10 +115,6 @@ export default function Home() {
                     </div>
                   )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                  {/* Featured Badge */}
-                  <div className="absolute top-4 left-4 bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
-                    ⭐ Featured
-                  </div>
                   {/* Key Metric Badge */}
                   {p.metrics && Object.keys(p.metrics).length > 0 && (
                     <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg text-right">

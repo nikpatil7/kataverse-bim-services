@@ -23,11 +23,11 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src="/images/kataverse-logo.jpg" 
+              src="/images/kataverse-logo-final.png" 
               alt="KataVerse BIM Services" 
-              className="w-11 h-11 rounded-xl shadow-lg group-hover:scale-110 transition-transform object-cover"
+              className="w-14 h-14 rounded-xl shadow-lg group-hover:scale-110 transition-transform object-cover"
             />
-            <span className="text-xl font-bold text-secondary hidden sm:block group-hover:text-primary transition-colors">
+            <span className="text-xl font-bold text-secondary hidden sm:block tracking-tight">
               KataVerse BIM Services
             </span>
           </Link>

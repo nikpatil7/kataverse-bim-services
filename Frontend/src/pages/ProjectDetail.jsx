@@ -135,7 +135,7 @@ export default function ProjectDetail() {
                   <h3 className="text-lg font-semibold text-secondary mb-4">Project Info</h3>
                   <div className="space-y-2 text-gray-700">
                     <div><span className="font-semibold">Category:</span> {project.category}</div>
-                    <div><span className="font-semibold">Featured:</span> {project.featured ? 'Yes' : 'No'}</div>
+                    {/* <div><span className="font-semibold">Featured:</span> {project.featured ? 'Yes' : 'No'}</div> */}
                     <div className="flex items-center gap-2"><span className="font-semibold">Rating:</span> {Array.from({ length: rating }).map((_, i) => (<FaStar key={i} className="text-accent" />))}</div>
                   </div>
                 </div>

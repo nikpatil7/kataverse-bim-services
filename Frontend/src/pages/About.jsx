@@ -103,7 +103,7 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {['Revit', 'Navisworks', 'AutoCAD', 'BIM 360', 'Tekla', 'ArchiCAD', 'Dynamo', 'Solibri'].map((tool) => (
+            {['Revit', 'Navisworks', 'AutoCAD', 'BIM 360', 'Trimble Points', 'ArchiCAD', 'Dynamo', 'Solibri'].map((tool) => (
               <div key={tool} className="bg-light p-6 rounded-lg text-center font-semibold text-secondary hover:bg-primary hover:text-white transition-all cursor-pointer">
                 {tool}
               </div>

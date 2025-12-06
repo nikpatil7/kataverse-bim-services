@@ -2,8 +2,8 @@ import React from 'react';
 
 const RegionSelector = ({ selectedRegion, onRegionChange }) => {
   const regions = [
-    { value: 'USA', label: '🇺🇸 USA', flag: '🇺🇸' },
-    { value: 'UK', label: '🇬🇧 UK', flag: '🇬🇧' },
+    { value: 'USA', label: 'USA' },
+    { value: 'UK', label: 'UK' },
   ];
 
   return (
@@ -13,14 +13,13 @@ const RegionSelector = ({ selectedRegion, onRegionChange }) => {
           <button
             key={region.value}
             onClick={() => onRegionChange(region.value)}
-            className={`px-6 py-2 rounded-md font-semibold transition-all duration-200 flex items-center gap-2 ${
+            className={`px-6 py-2 rounded-md font-semibold transition-all duration-200 ${
               selectedRegion === region.value
                 ? 'bg-[#0a2f47] text-white shadow-md'
                 : 'bg-white text-[#0a2f47] hover:bg-gray-50'
             }`}
           >
-            <span className="text-xl">{region.flag}</span>
-            <span>{region.value}</span>
+            <span>{region.label}</span>
           </button>
         ))}
       </div>

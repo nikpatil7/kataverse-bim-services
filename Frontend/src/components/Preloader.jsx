@@ -37,9 +37,9 @@ const Preloader = () => {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="w-32 h-32 md:w-40 md:h-40">
+              <div className="w-48 h-48 md:w-56 md:h-56">
                 <img 
-                  src="/images/kataverse-logo.jpg" 
+                  src="/images/kataverse-logo-final.png" 
                   alt="KataVerse BIM Services" 
                   className="w-full h-full object-contain rounded-2xl shadow-2xl" 
                 />

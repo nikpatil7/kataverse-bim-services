@@ -16,11 +16,13 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <img 
-                src="/images/kataverse-logo.jpg" 
+                src="/images/kataverse-logo-final.png" 
                 alt="KataVerse BIM Services" 
-                className="w-12 h-12 rounded-xl shadow-lg object-cover"
+                className="w-16 h-16 rounded-xl shadow-lg object-cover"
               />
-              <span className="text-xl font-bold">{siteConfig.siteName}</span>
+              <span className="text-xl font-bold text-white tracking-tight">
+                KataVerse BIM Services
+              </span>
             </div>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
               Your dedicated partner for advanced BIM solutions, specializing in MEPF disciplines. We empower engineers, contractors, and subcontractors to achieve superior project delivery.

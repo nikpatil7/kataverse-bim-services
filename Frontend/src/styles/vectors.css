@@ -1,0 +1,74 @@
+/* Parallax effect for vectors */
+@media (prefers-reduced-motion: no-preference) {
+  .vector-parallax {
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+}
+
+/* Vector fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vector-fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Vector scale animation on hover */
+.vector-hover-scale {
+  transition: transform 0.3s ease-out;
+}
+
+.vector-hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* Glow effect for vectors */
+.vector-glow {
+  filter: drop-shadow(0 0 20px rgba(230, 126, 77, 0.3));
+}
+
+/* Subtle animation for background vectors */
+@keyframes subtleShift {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+.vector-subtle-shift {
+  animation: subtleShift 3s ease-in-out infinite;
+}
+
+/* Vector pulse animation */
+@keyframes vectorPulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.vector-pulse {
+  animation: vectorPulse 4s ease-in-out infinite;
+}
+
+/* Smooth overlay transitions */
+.vector-overlay {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.vector-overlay:hover {
+  opacity: 0.9;
+}

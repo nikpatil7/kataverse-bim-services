@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa';
 // eslint-disable-next-line no-unused-vars
 import { submitContactForm } from '../utils/api';
+import HeroVector from '../components/HeroVector';
 import SEO from '../components/SEO';
 import siteConfig from '../config/siteConfig';
 
@@ -120,19 +121,16 @@ export default function Contact() {
       )}
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary to-[#0a2f47] text-white">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Contact Us
-          </h1>
-          <p className="text-lg md:text-xl text-white text-opacity-90 max-w-3xl mx-auto">
-            Let's discuss how we can help optimize your next BIM project
-          </p>
-        </div>
-      </section>
+      <HeroVector
+        vectorSrc="/vectors/background/Hexagon-dotted-connect-line-background.jpg"
+        title="Get In Touch"
+        subtitle="Let's discuss your BIM and MEP coordination needs"
+        overlayColor="navy"
+        height="md"
+      />
 
       {/* Contact Section */}
-      <section className="section-padding bg-light">
+      <section className="section-padding bg-light pattern-tech-lines">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}

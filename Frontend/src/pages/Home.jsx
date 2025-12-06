@@ -3,12 +3,43 @@ import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Stats from '../components/Stats';
 import Testimonials from '../components/Testimonials';
+import SectionDivider from '../components/SectionDivider';
+import AnimatedBackground from '../components/AnimatedBackground';
+import VectorBackground from '../components/VectorBackground';
+import ServiceCardWithImage from '../components/ServiceCardWithImage';
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaDownload } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import { getProjects } from '../utils/api';
 import FadeIn from '../components/animations/FadeIn';
 import StaggerContainer, { StaggerItem } from '../components/animations/StaggerContainer';
+
+const featuredServices = [
+  {
+    title: 'MEP BIM Modeling',
+    description: 'Comprehensive 3D modeling for mechanical, electrical, and plumbing systems',
+    imageSrc: '/images/services/mep-bim-model.jpg',
+    imageAlt: 'MEP BIM Model',
+    link: '/services',
+    features: ['Revit MEP', 'LOD 300-500', 'As-Built Models'],
+  },
+  {
+    title: 'Clash Detection & Coordination',
+    description: 'Advanced conflict identification and resolution before construction begins',
+    imageSrc: '/images/services/clash-detection-coordination.jpg',
+    imageAlt: 'Clash Detection',
+    link: '/services',
+    features: ['Navisworks', 'Issue Reports', '87% Rework Reduction'],
+  },
+  {
+    title: 'CAD to BIM Conversion',
+    description: 'Transform legacy CAD drawings into intelligent BIM models',
+    imageSrc: '/images/services/BIM-XS-CAD.jpg',
+    imageAlt: 'CAD to BIM',
+    link: '/services',
+    features: ['Legacy Conversion', 'Model Accuracy', 'Documentation'],
+  },
+];
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
@@ -69,10 +100,37 @@ export default function Home() {
       />
       <Hero />
       <Services />
+      
+      <SectionDivider variant="wave" color="#F5F5F5" />
+
+      {/* Featured Services with Images */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <FadeIn className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary">
+              Explore Our Core Services
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Professional BIM solutions backed by cutting-edge technology and expert coordination
+            </p>
+          </FadeIn>
+          
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredServices.map((service, idx) => (
+              <StaggerItem key={idx}>
+                <ServiceCardWithImage {...service} />
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+      
+      <SectionDivider variant="curve" color="#F9FAFB" flip />
+      
       <Stats />
       
       {/* Featured Projects Preview */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-white pattern-grid">
         <div className="container-custom">
           <FadeIn className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary">
@@ -205,13 +263,31 @@ export default function Home() {
         </div>
       </section>
 
-      <Testimonials />
+      <section 
+        className="relative py-20"
+        style={{
+          backgroundImage: 'linear-gradient(135deg, rgba(249, 250, 251, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%), url(/images/team/bim-consulting-1-1.jpg.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <Testimonials />
+      </section>
 
-      {/* Final CTA */}
-      <section className="section-padding bg-gradient-to-r from-primary to-[#0a2f47] text-white overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10">
+      <SectionDivider variant="curve" color="#0B1F2A" flip={true} />
+
+      {/* Final CTA with Animated Background */}
+      <VectorBackground
+        vectorSrc="/vectors/patterns/5779c9_42da9a288609460fabca90b54324f5d5~mv2.avif"
+        opacity={0.2}
+        className="section-padding bg-gradient-to-r from-primary to-secondary text-white overflow-hidden relative"
+        overlayGradient="linear-gradient(135deg, rgba(45, 122, 142, 0.95) 0%, rgba(11, 31, 42, 0.95) 100%)"
+      >
+        <AnimatedBackground variant="shapes" />
+        <div className="absolute inset-0 opacity-10 z-0">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
         </div>
         <div className="container-custom text-center relative z-10">
           <FadeIn>
@@ -230,7 +306,7 @@ export default function Home() {
             </Link>
           </FadeIn>
         </div>
-      </section>
+      </VectorBackground>
     </div>
   );
 }

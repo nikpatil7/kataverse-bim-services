@@ -1,0 +1,241 @@
+/* ========================================
+   BACKGROUND PATTERNS & EFFECTS
+   ======================================== */
+
+/* Geometric Pattern */
+.pattern-geometric {
+  background-image: 
+    linear-gradient(45deg, rgba(45, 122, 142, 0.08) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(45, 122, 142, 0.08) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(45, 122, 142, 0.08) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(45, 122, 142, 0.08) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+}
+
+/* Grid Pattern */
+.pattern-grid {
+  background-image: 
+    linear-gradient(0deg, rgba(45, 122, 142, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 122, 142, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Tech Lines Pattern */
+.pattern-tech-lines {
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(45, 122, 142, 0.08) 24px, rgba(45, 122, 142, 0.08) 48px),
+    repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(230, 126, 77, 0.04) 24px, rgba(230, 126, 77, 0.04) 48px);
+}
+
+/* Blueprint Pattern */
+.pattern-blueprint {
+  background-color: #0B1F2A;
+  background-image: 
+    linear-gradient(rgba(45, 122, 142, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 122, 142, 0.15) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Animated Gradient Background */
+.animated-gradient-bg {
+  background: linear-gradient(-45deg, #2D7A8E, #3A9BAE, #E67E4D, #0B1F2A);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating Shapes Animation */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.floating-shape-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(230, 126, 77, 0.3), transparent);
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.floating-shape-2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(45, 122, 142, 0.3), transparent);
+  bottom: -50px;
+  left: 50px;
+  animation-delay: 7s;
+}
+
+.floating-shape-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(58, 155, 174, 0.3), transparent);
+  top: 50%;
+  left: 10%;
+  animation-delay: 14s;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0.15;
+  }
+  50% { 
+    transform: translate(30px, -30px) rotate(180deg);
+    opacity: 0.25;
+  }
+}
+
+/* Pulse Animation for Accents */
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Hero Background Container */
+.hero-with-background {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.3;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(45, 122, 142, 0.7), rgba(11, 31, 42, 0.85));
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  padding: 2rem;
+}
+
+/* Parallax Background */
+.parallax-section {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.parallax-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  will-change: transform;
+}
+
+.parallax-image {
+  position: absolute;
+  inset: -100px;
+  background-size: cover;
+  background-position: center;
+}
+
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(45, 122, 142, 0.65), rgba(11, 31, 42, 0.75));
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+/* Section Divider Styles */
+.section-divider {
+  position: relative;
+  height: 120px;
+  overflow: visible;
+}
+
+.divider-wave {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 120px;
+}
+
+/* Animated Background Container */
+.animated-bg-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-bg-image {
+    background-attachment: scroll;
+    opacity: 0.15;
+  }
+
+  .parallax-background {
+    transform: none !important;
+  }
+
+  .floating-shape {
+    animation: none;
+    opacity: 0.08;
+  }
+
+  .hero-with-background {
+    min-height: 500px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-bg-image {
+    opacity: 0.25;
+  }
+}
+
+/* Performance Optimizations */
+.hero-bg-image,
+.parallax-background,
+.floating-shape {
+  will-change: transform;
+}

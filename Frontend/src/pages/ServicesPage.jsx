@@ -1,5 +1,7 @@
 import { FaBuilding, FaCogs, FaSearch, FaCube, FaCheckCircle } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import SectionDivider from '../components/SectionDivider';
+import ServiceCardWithImage from '../components/ServiceCardWithImage';
 
 const servicesData = [
   {
@@ -80,6 +82,57 @@ const servicesData = [
   }
 ];
 
+const serviceCards = [
+  {
+    title: 'MEP Modeling & Design',
+    description: 'Complete 3D MEP coordination and clash detection for optimal building performance',
+    imageSrc: '/images/services/mep-bim-model.jpg',
+    imageAlt: 'MEP BIM Model',
+    link: '/contact',
+    features: ['3D Modeling', 'Clash Detection', 'Coordination'],
+  },
+  {
+    title: 'BIM Coordination',
+    description: 'Multi-discipline coordination and conflict resolution for seamless integration',
+    imageSrc: '/images/services/clash-detection-coordination.jpg',
+    imageAlt: 'Clash Detection',
+    link: '/contact',
+    features: ['Clash Analysis', 'Trade Coordination', 'Conflict Resolution'],
+  },
+  {
+    title: 'CAD to BIM Conversion',
+    description: 'Transform existing CAD drawings into intelligent BIM models',
+    imageSrc: '/images/services/BIM-XS-CAD.jpg',
+    imageAlt: 'CAD to BIM Conversion',
+    link: '/contact',
+    features: ['Legacy Conversion', 'Model Accuracy', 'Documentation'],
+  },
+  {
+    title: 'MEP Shop Drawings',
+    description: 'Detailed fabrication and installation drawings from BIM models',
+    imageSrc: '/images/services/MEP-drafting-1.jpg',
+    imageAlt: 'MEP Shop Drawings',
+    link: '/contact',
+    features: ['Precision Details', 'Installation Guides', 'Material Schedules'],
+  },
+  {
+    title: 'BIM Modeling Services',
+    description: 'Expert BIM modeling for commercial and retail MEP solutions',
+    imageSrc: '/images/services/mep-modeling.jpg',
+    imageAlt: 'BIM Modeling',
+    link: '/contact',
+    features: ['Commercial Design', 'Retail Projects', 'Specialized Systems'],
+  },
+  {
+    title: 'MEPF Services',
+    description: 'Comprehensive mechanical, electrical, plumbing, and fire protection services',
+    imageSrc: '/images/services/mepf-services.jpg',
+    imageAlt: 'MEPF Services',
+    link: '/contact',
+    features: ['Full MEP Design', 'Fire Protection', 'System Integration'],
+  },
+];
+
 export default function ServicesPage() {
   return (
     <div>
@@ -88,10 +141,20 @@ export default function ServicesPage() {
         description="BIM modeling, MEP coordination, clash detection, and 3D visualization services tailored to commercial, residential, and industrial projects."
         url="https://www.mechtronglobal.com/services"
       />
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary to-[#0a2f47] text-white">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+      {/* Hero Section with Blueprint Pattern */}
+      <section className="relative py-16 px-4 md:py-20 text-white overflow-hidden bg-[#0B1F2A]">
+        {/* Blueprint pattern overlay */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none"
+          style={{
+            backgroundImage: 'linear-gradient(0deg, transparent 95%, rgba(45, 122, 142, 0.5) 96%), linear-gradient(90deg, transparent 95%, rgba(45, 122, 142, 0.5) 96%)',
+            backgroundSize: '32px 32px'
+          }}
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0B1F2A] via-primary/80 to-[#0B1F2A]/95 pointer-events-none" />
+        
+        <div className="container-custom text-center py-20 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">
             Our BIM Services
           </h1>
           <p className="text-lg md:text-xl text-white text-opacity-90 max-w-3xl mx-auto">
@@ -100,11 +163,35 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      <SectionDivider variant="wave" color="#F9FAFB" />
+
+      {/* Service Cards Grid */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary">
+              Explore Our Services
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Professional BIM and MEP services backed by years of experience and cutting-edge technology
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceCards.map((service, idx) => (
+              <ServiceCardWithImage key={idx} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="curve" flip color="#FFFFFF" />
+
       {/* Services Details */}
       {servicesData.map((service, index) => (
         <section
           key={index}
-          className={`section-padding ${index % 2 === 0 ? 'bg-white' : 'bg-light'}`}
+          className={`section-padding ${index % 2 === 0 ? 'bg-white pattern-grid' : 'bg-light'}`}
         >
           <div className="container-custom">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

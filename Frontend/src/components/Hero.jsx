@@ -14,7 +14,7 @@ export default function Hero() {
         <div
           className="w-full h-full opacity-20 md:opacity-30 mix-blend-screen"
           style={{
-            backgroundImage: "url('/images/hero-bim.jpg')",
+            backgroundImage: "url('/images/hero/Revit-MEP-3D-modeling.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -26,35 +26,9 @@ export default function Hero() {
         <div className="w-full h-full bg-[radial-gradient(circle_at_1px_1px,#1f2937_1px,transparent_0)] bg-[length:32px_32px]" />
       </div>
 
-      {/* Animated blueprint blobs */}
+      {/* Animated blueprint blobs - optimized to single CSS animation */}
       <div className="absolute inset-0 overflow-hidden">
-        <Motion.div 
-          animate={{ 
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 -left-20 w-96 h-96 bg-cyan-500 opacity-10 rounded-full mix-blend-screen filter blur-3xl"
-        />
-        <Motion.div 
-          animate={{ 
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-40 -right-20 w-96 h-96 bg-primary opacity-10 rounded-full mix-blend-screen filter blur-3xl"
-        />
-        <Motion.div 
-          animate={{ 
-            x: [0, -50, 0],
-            y: [0, -100, 0],
-            scale: [1, 1.15, 1]
-          }}
-          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -bottom-20 left-1/3 w-96 h-96 bg-cyan-400 opacity-10 rounded-full mix-blend-screen filter blur-3xl"
-        />
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500 to-primary opacity-10 rounded-full mix-blend-screen filter blur-3xl animate-blob" />
       </div>
 
       {/* Content */}
@@ -106,7 +80,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-sm sm:text-base md:text-lg mb-8 text-gray-200 max-w-xl leading-relaxed mx-auto lg:mx-0"
+              className="text-sm sm:text-base md:text-lg mb-8 text-gray-100 max-w-xl leading-relaxed mx-auto lg:mx-0"
             >
               Precision BIM Modeling • MEP Coordination • Clash Detection • 3D Visualization — Helping Contractors, Subcontractors and Engineers prevent clashes and costly rework before construction begins.
             </Motion.p>

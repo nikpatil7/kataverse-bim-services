@@ -2,10 +2,13 @@ import { useEffect, useState } from 'react';
 import { FaStar, FaTimes, FaDownload } from 'react-icons/fa';
 import { getProjects } from '../utils/api';
 import SEO from '../components/SEO';
+import AnimatedBackground from '../components/AnimatedBackground';
+import SectionDivider from '../components/SectionDivider';
 import RegionSelector from '../components/RegionSelector';
 import UKComingSoonCard from '../components/UKComingSoonCard';
 import { useNavigate } from 'react-router-dom';
 import { ProjectCardSkeleton } from '../components/ui/Skeleton';
+import ImageGallery from '../components/ImageGallery';
 
 // Available regions - easily extensible for future expansion
 const AVAILABLE_REGIONS = [
@@ -17,6 +20,46 @@ const AVAILABLE_REGIONS = [
 ];
 
 const categories = ['All', 'Residential', 'Commercial', 'Industrial', 'High-Rise', 'Others'];
+
+// Static project gallery images
+const projectGalleryImages = [
+  {
+    src: '/images/projects/3D-MEP-Coordination.png',
+    alt: '3D MEP Coordination',
+    title: '3D MEP Coordination',
+    category: 'BIM Coordination',
+  },
+  {
+    src: '/images/projects/Revit-MEP-3D-modeling.jpg',
+    alt: 'Revit MEP 3D Modeling',
+    title: 'Revit MEP 3D Modeling',
+    category: 'MEP Design',
+  },
+  {
+    src: '/images/projects/Residential-complex.jpg',
+    alt: 'Residential Complex',
+    title: 'Residential Complex Project',
+    category: 'Architecture',
+  },
+  {
+    src: '/images/projects/mep-gal-01-2.jpg.webp',
+    alt: 'MEP Installation',
+    title: 'MEP Installation Gallery',
+    category: 'Installation',
+  },
+  {
+    src: '/images/projects/BIM-scope-overlap.jpg',
+    alt: 'BIM Scope Management',
+    title: 'Scope Overlap Analysis',
+    category: 'Coordination',
+  },
+  {
+    src: '/images/projects/floorplan-400x284.jpg.webp',
+    alt: 'Detailed Floor Plan',
+    title: 'Detailed Floor Plan',
+    category: 'Planning',
+  },
+];
 
 // Coming soon card data - customize per region
 const COMING_SOON_REGIONS = {
@@ -103,8 +146,17 @@ export default function Projects() {
         url="https://www.kataversebim.com/projects"
       />
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary to-[#0a2f47] text-white" data-aos="fade-up">
-        <div className="container-custom text-center">
+      <section 
+        className="relative py-20 text-white overflow-hidden" 
+        data-aos="fade-up"
+        style={{
+          backgroundImage: 'linear-gradient(135deg, rgba(45, 122, 142, 0.88) 0%, rgba(11, 31, 42, 0.88) 100%), url(/images/projects/3D-MEP-Coordination.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      >
+        <AnimatedBackground variant="shapes" />
+        <div className="container-custom text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Our Projects
           </h1>
@@ -113,6 +165,28 @@ export default function Projects() {
           </p>
         </div>
       </section>
+
+      <SectionDivider variant="curve" color="#F9FAFB" flip={true} />
+
+      {/* Project Gallery Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary">
+              Featured Projects Gallery
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Explore our portfolio of completed BIM and MEP coordination projects. Click any image to view details.
+            </p>
+          </div>
+          
+          <div data-aos="fade-up" data-aos-delay="100">
+            <ImageGallery images={projectGalleryImages} columns={3} />
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="zigzag" color="#F9FAFB" />
 
       {/* Region Selector */}
       <section className="section-padding bg-light pt-8 pb-4">

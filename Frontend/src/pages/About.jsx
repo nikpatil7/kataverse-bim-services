@@ -42,7 +42,7 @@ export default function About() {
       <SEO
         title="About Us — KataVerse BIM Services"
         description="Learn about KataVerse BIM Services: 8+ years of BIM excellence delivering BIM modeling, MEP coordination, clash detection, and 3D visualization."
-        url="https://www.kataversebim.com/about"
+        url="https://www.kataversebim.in/about"
       />
 
       {/* ---------------- About Hero Section ---------------- */}

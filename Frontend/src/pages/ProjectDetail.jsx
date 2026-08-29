@@ -96,7 +96,7 @@ export default function ProjectDetail() {
       <SEO
         title={project ? `${project.title} — KataVerse BIM Services` : 'Project — KataVerse BIM Services'}
         description={project?.description}
-        url={`https://www.kataversebim.com/projects/${slug || id}`}
+        url={`https://www.kataversebim.in/projects/${slug || id}`}
         image={project?.images?.[0] || '/kataverse-og-image.png'}
         jsonLd={project ? {
           '@context': 'https://schema.org',
@@ -108,8 +108,8 @@ export default function ProjectDetail() {
           url: `https://www.kataversebim.in/projects/${project.slug || id}`,
           provider: {
             '@type': 'Organization',
-            name: 'Mechtron Global',
-              url: 'https://www.kataversebim.in'
+            name: 'KataVerse BIM Services',
+            url: 'https://www.kataversebim.in'
           }
         } : null}
       />

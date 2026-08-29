@@ -147,7 +147,7 @@ export default function Projects() {
       <SEO
         title="Projects — KataVerse BIM Services"
         description="Explore KataVerse BIM Services portfolio across commercial, residential, industrial, and educational sectors in the USA and UK."
-        url="https://www.kataversebim.com/projects"
+        url="https://www.kataversebim.in/projects"
       />
       
       {/* Hero Section */}

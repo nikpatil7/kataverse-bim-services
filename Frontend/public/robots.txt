@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.kataversebim.com/sitemap.xml
+Sitemap: https://www.kataversebim.in/sitemap.xml

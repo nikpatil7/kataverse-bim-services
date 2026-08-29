@@ -78,7 +78,7 @@ router.post('/submit', async (req, res) => {
     const adminMailOptions = {
       from: process.env.SMTP_USER,
       to: process.env.ADMIN_EMAIL || process.env.SMTP_USER,
-      subject: `New Inquiry from ${name} - Mechtron Global`,
+      subject: `New Inquiry from ${name} - KataVerse BIM Services`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2D7A8E; border-bottom: 3px solid #E67E4D; padding-bottom: 10px;">
@@ -106,11 +106,11 @@ router.post('/submit', async (req, res) => {
     const userMailOptions = {
       from: process.env.SMTP_USER,
       to: email,
-      subject: 'Thank You for Contacting Mechtron Global',
+      subject: 'Thank You for Contacting KataVerse BIM Services',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background: linear-gradient(135deg, #2D7A8E 0%, #0a2f47 100%); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0;">
-            <h1 style="margin: 0; font-size: 28px;">Mechtron Global</h1>
+            <h1 style="margin: 0; font-size: 28px;">KataVerse BIM Services</h1>
             <p style="margin: 10px 0 0 0; opacity: 0.9;">Advanced BIM Solutions</p>
           </div>
           <div style="padding: 30px; background-color: #f9f9f9;">
@@ -129,12 +129,12 @@ router.post('/submit', async (req, res) => {
             </div>
             <p style="line-height: 1.6; color: #333;">
               <strong>Best regards,</strong><br/>
-              The Mechtron Global Team
+              The KataVerse BIM Services Team
             </p>
           </div>
           <div style="background-color: #1F2121; color: white; padding: 20px; text-align: center; border-radius: 0 0 8px 8px;">
             <p style="margin: 0; font-size: 14px; opacity: 0.8;">
-              © ${new Date().getFullYear()} Mechtron Global. All rights reserved.
+              © ${new Date().getFullYear()} KataVerse BIM Services. All rights reserved.
             </p>
           </div>
         </div>

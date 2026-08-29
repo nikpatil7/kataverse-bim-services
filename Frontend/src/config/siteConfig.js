@@ -3,14 +3,14 @@
 
 const siteConfig = {
   // Site Identity
-  siteName: import.meta.env.VITE_SITE_NAME || 'Mechtron Global',
+  siteName: import.meta.env.VITE_SITE_NAME || 'KataVerse BIM Services',
   siteUrl: import.meta.env.VITE_SITE_URL || 'http://localhost:5173',
   siteDomain: import.meta.env.VITE_SITE_DOMAIN || 'localhost:5173',
   
   // Contact Information
   contact: {
-    email: import.meta.env.VITE_CONTACT_EMAIL || 'sales@mechtronglobal.com',
-    supportEmail: import.meta.env.VITE_SUPPORT_EMAIL || 'info@mechtronglobal.com',
+    email: import.meta.env.VITE_CONTACT_EMAIL || 'sales@kataversebim.in',
+    supportEmail: import.meta.env.VITE_SUPPORT_EMAIL || 'info@kataversebim.in',
     phone: import.meta.env.VITE_CONTACT_PHONE || '+91 93211 76790',
     phoneSecondary: import.meta.env.VITE_CONTACT_PHONE_SECONDARY || '',
     address: import.meta.env.VITE_COMPANY_ADDRESS || 'Vivesta Purnanagar, Pune, Maharashtra, India',
@@ -18,7 +18,7 @@ const siteConfig = {
   
   // Social Media Links
   social: {
-    linkedin: import.meta.env.VITE_SOCIAL_LINKEDIN || 'https://www.linkedin.com/company/mechtronglobal',
+    linkedin: import.meta.env.VITE_SOCIAL_LINKEDIN || 'https://www.linkedin.com/company/kataversebim',
     twitter: import.meta.env.VITE_SOCIAL_TWITTER || 'https://twitter.com',
     facebook: import.meta.env.VITE_SOCIAL_FACEBOOK || 'https://facebook.com',
     instagram: import.meta.env.VITE_SOCIAL_INSTAGRAM || 'https://instagram.com',

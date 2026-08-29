@@ -129,9 +129,9 @@ export default function ServicesPage() {
   return (
     <div>
       <SEO
-        title="BIM Services — Mechtron Global"
+        title="BIM Services — KataVerse BIM Services"
         description="BIM modeling, MEP coordination, clash detection, and 3D visualization services tailored to commercial, residential, and industrial projects."
-        url="https://www.mechtronglobal.com/services"
+        url="https://www.kataversebim.in/services"
       />
 
       {/* HERO SECTION */}
@@ -153,7 +153,7 @@ export default function ServicesPage() {
       className="absolute inset-0 opacity-75 will-change-transform transition-transform duration-75"
       style={{
         backgroundImage:
-          "url('/hero_bg/Gemini_Generated_Image_mtqfbtmtqfbtmtqf.png')",
+          "url('/hero_bg/services_hero_bg.png')",
         backgroundSize: "cover",
         // 👇 this makes the pipes sit higher, so no big empty band on top
         backgroundPosition: "center 15%",

@@ -474,10 +474,10 @@ export default function ServicesPage() {
               <p className="text-sm text-gray-300 mb-2">
                 Questions? Contact us at{' '}
                 <a
-                  href="mailto:info@mechtronglobal.com"
+                  href="mailto:info@kataversebim.in"
                   className="text-[#14B8A6] hover:text-[#14B8A6]/80 font-semibold transition-colors"
                 >
-                  info@mechtronglobal.com
+                  info@kataversebim.in
                 </a>
               </p>
             </div>

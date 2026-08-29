@@ -43,6 +43,28 @@
       linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
   }
+
+  .bg-blueprint-pattern {
+    background-image: 
+      linear-gradient(rgba(20, 184, 166, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 184, 166, 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 1px 1px, rgba(20, 184, 166, 0.15) 1px, transparent 0);
+    background-size: 40px 40px, 40px 40px, 20px 20px;
+  }
+
+  .bg-construction-pattern {
+    background-image: 
+      linear-gradient(rgba(14, 58, 91, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 58, 91, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .bg-technical-pattern {
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(20, 184, 166, 0.05) 2px, rgba(20, 184, 166, 0.05) 4px),
+      repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(20, 184, 166, 0.05) 2px, rgba(20, 184, 166, 0.05) 4px);
+    background-size: 60px 60px;
+  }
   
   .animation-delay-2000 {
     animation-delay: 2s;

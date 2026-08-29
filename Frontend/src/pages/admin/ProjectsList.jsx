@@ -72,7 +72,7 @@ export default function ProjectsList() {
       label: 'Category',
       width: '150px',
       render: (project) => (
-        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium max-w-[90vw] truncate">
           {project.category}
         </span>
       ),
@@ -130,6 +130,8 @@ export default function ProjectsList() {
     ],
     value: filter,
     onChange: setFilter,
+    className: 'flex-nowrap overflow-x-auto gap-2 whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100',
+    optionClassName: 'min-w-[90px] px-3 py-2 rounded-lg text-sm font-medium border border-gray-200 bg-white hover:bg-primary/10 focus:bg-primary/20 transition',
   };
 
   return (
@@ -146,11 +148,26 @@ export default function ProjectsList() {
           </Link>
         </div>
 
+        {/* Responsive filter bar wrapper for mobile */}
+        <div className="mb-4 -mx-2 md:mx-0">
+          <div className="flex overflow-x-auto gap-2 px-2 pb-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+            {filterOptions.options.map((opt) => (
+              <button
+                key={opt.value}
+                onClick={() => setFilter(opt.value)}
+                className={`min-w-[90px] px-3 py-2 rounded-lg text-sm font-medium border border-gray-200 bg-white hover:bg-primary/10 focus:bg-primary/20 transition ${filter === opt.value ? 'bg-primary/10 border-primary text-primary-dark font-semibold' : ''}`}
+                aria-pressed={filter === opt.value}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <DataTable
           data={projects}
           columns={columns}
           actions={actions}
-          filters={filterOptions}
           loading={loading}
           emptyMessage="No projects found"
         />

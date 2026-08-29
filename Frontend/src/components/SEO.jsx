@@ -26,7 +26,8 @@ export default function SEO({
   title,
   description,
   url,
-  image = '/og-image.jpg',
+  // image = '/og-image.jpg',
+  image = '/kataverse-og-image.png',
   jsonLd, // object or array of objects
   transientTitle = false, // when true, restore previous title on unmount
 }) {

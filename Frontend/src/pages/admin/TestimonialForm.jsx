@@ -210,7 +210,7 @@ export default function TestimonialForm() {
             {uploading && <p className="text-sm text-gray-600 mt-2">Uploading...</p>}
             {formData.photo && (
               <div className="mt-4">
-                <img src={formData.photo} alt="Testimonial" className="w-24 h-24 object-cover rounded-full border" />
+                <img src={formData.photo} alt="Testimonial" className="w-24 h-24 object-cover rounded-full border" loading="lazy" />
               </div>
             )}
           </div>

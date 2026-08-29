@@ -252,7 +252,7 @@ export default function ProjectForm() {
               <div className="flex gap-3 flex-wrap mt-4">
                 {formData.images.map((url, i) => (
                   <div key={i} className="relative group">
-                    <img src={url} alt={`Upload ${i + 1}`} className="w-24 h-24 object-cover rounded-lg border" />
+                    <img src={url} alt={`Upload ${i + 1}`} className="w-24 h-24 object-cover rounded-lg border" loading="lazy" />
                     <button
                       type="button"
                       onClick={() => removeImage(i)}

@@ -4,6 +4,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/
 import { submitContactForm } from '../utils/api';
 import SEO from '../components/SEO';
 import siteConfig from '../config/siteConfig';
+import imageConfig from '../config/imageConfig';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -120,20 +121,104 @@ export default function Contact() {
       )}
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary to-[#0a2f47] text-white">
-        <div className="container-custom text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Contact Us
-          </h1>
-          <p className="text-lg md:text-xl text-white text-opacity-90 max-w-3xl mx-auto">
-            Let's discuss how we can help optimize your next BIM project
-          </p>
+      <section className="relative py-10 md:py-14 lg:py-18 bg-gradient-to-br from-[#0B1F2A] via-[#0B1F2A] to-[#0B1F2A] text-white overflow-hidden">
+
+        {/* Background Image - Coordination Collab Theme */}
+        <div className="absolute inset-0">
+          <div 
+            className="absolute inset-0 opacity-60"
+            style={{
+              backgroundImage: "url('/images/mechtron-images/coordination-collab.jpg')",
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'brightness(0.85)',
+            }}
+          />
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F2A]/60 via-[#0B1F2A]/40 to-[#0B1F2A]/70" />
+        </div>
+        
+        {/* Blueprint Grid Pattern - Technical Drawing Style */}
+        <div className="absolute inset-0 opacity-10">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="blueprint-grid-contact" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#14B8A6" strokeWidth="0.5" opacity="0.4"/>
+              </pattern>
+              <pattern id="blueprint-dots-contact" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="10" cy="10" r="1" fill="#14B8A6" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#blueprint-grid-contact)" />
+            <rect width="100%" height="100%" fill="url(#blueprint-dots-contact)" />
+          </svg>
+        </div>
+        
+        {/* Technical Measurement Lines */}
+        <div className="absolute inset-0 opacity-8">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="measurement-lines-contact" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <line x1="0" y1="50" x2="100" y2="50" stroke="#14B8A6" strokeWidth="0.3" opacity="0.2" strokeDasharray="2,2"/>
+                <line x1="50" y1="0" x2="50" y2="100" stroke="#14B8A6" strokeWidth="0.3" opacity="0.2" strokeDasharray="2,2"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#measurement-lines-contact)" />
+          </svg>
+        </div>
+        
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto text-center px-4 py-8 md:py-12">
+            {/* Badge with Contact Icon */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#14B8A6]/20 backdrop-blur-sm border border-[#14B8A6]/30 rounded-full text-[#14B8A6] text-xs font-semibold uppercase tracking-wider mb-6">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>Get In Touch</span>
+            </div>
+            
+            {/* Heading */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-white">
+              Contact Us
+            </h1>
+            
+            {/* Description */}
+            <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+              Let's discuss how we can help optimize your next BIM project
+            </p>
+            
+            {/* Technical Indicators */}
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-[#14B8A6] rounded-full"></div>
+                <span>Free Consultation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-[#14B8A6] rounded-full"></div>
+                <span>24hr Response</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-[#14B8A6] rounded-full"></div>
+                <span>Expert Team</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="section-padding bg-light">
-        <div className="container-custom">
+      <section className="section-padding bg-light relative overflow-hidden">
+        {/* Very Subtle Pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.015] pointer-events-none"
+          style={{
+            backgroundImage: `url('${imageConfig.patterns.hexagon}')`,
+            backgroundSize: '400px 400px',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'repeat',
+          }}
+        />
+        <div className="container-custom relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Info */}
             <div>
@@ -147,82 +232,90 @@ export default function Contact() {
               </p>
 
               {/* Contact Details */}
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                    <FaEnvelope size={20} />
+              <div className="space-y-5">
+                <div className="flex items-start gap-4 p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#2D7A8E] to-[#14B8A6] rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                    <FaEnvelope size={22} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary mb-1">Email</h3>
-                    <p className="text-gray-600">{siteConfig.contact.email}</p>
+                    <h3 className="font-bold text-secondary mb-2 text-lg">Email</h3>
+                    <p className="text-gray-700 font-medium">{siteConfig.contact.email}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                    <FaPhone size={20} />
+                <div className="flex items-start gap-4 p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#2D7A8E] to-[#14B8A6] rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                    <FaPhone size={22} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary mb-1">Phone</h3>
-                    <p className="text-gray-600">{siteConfig.contact.phone}</p>
+                    <h3 className="font-bold text-secondary mb-2 text-lg">Phone</h3>
+                    <p className="text-gray-700 font-medium">{siteConfig.contact.phone}</p>
                     {siteConfig.contact.phoneSecondary && (
-                      <p className="text-gray-600">{siteConfig.contact.phoneSecondary}</p>
+                      <p className="text-gray-700 font-medium">{siteConfig.contact.phoneSecondary}</p>
                     )}
-                    <p className="text-gray-600 text-sm mt-1">Available Mon-Sat 9AM-6PM IST</p>
+                    <p className="text-gray-500 text-sm mt-2">Available Mon-Sat 9AM-6PM IST</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white flex-shrink-0">
-                    <FaMapMarkerAlt size={20} />
+                <div className="flex items-start gap-4 p-5 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                  <div className="w-14 h-14 bg-gradient-to-br from-[#2D7A8E] to-[#14B8A6] rounded-xl flex items-center justify-center text-white flex-shrink-0 shadow-lg">
+                    <FaMapMarkerAlt size={22} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-secondary mb-1">Office</h3>
-                    <p className="text-gray-600">{siteConfig.contact.address}</p>
+                    <h3 className="font-bold text-secondary mb-2 text-lg">Office</h3>
+                    <p className="text-gray-700 font-medium">{siteConfig.contact.address}</p>
                   </div>
                 </div>
               </div>
 
               {/* Business Hours */}
-              <div className="mt-8 p-6 bg-white rounded-lg shadow-md">
-                <h3 className="font-semibold text-secondary mb-4">Business Hours</h3>
-                <div className="space-y-2 text-gray-600">
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 10:00 AM - 2:00 PM</p>
-                  <p>Sunday: Closed</p>
+              <div className="mt-8 p-6 bg-gradient-to-br from-[#2D7A8E]/5 to-[#14B8A6]/5 rounded-xl border border-[#14B8A6]/20 shadow-md">
+                <h3 className="font-bold text-secondary mb-5 text-lg flex items-center gap-2">
+                  <span className="w-1 h-6 bg-[#14B8A6] rounded-full"></span>
+                  Business Hours
+                </h3>
+                <div className="space-y-3 text-gray-700">
+                  <p className="font-medium">Monday - Friday: <span className="text-[#2D7A8E]">9:00 AM - 6:00 PM</span></p>
+                  <p className="font-medium">Saturday: <span className="text-[#2D7A8E]">10:00 AM - 2:00 PM</span></p>
+                  <p className="font-medium">Sunday: <span className="text-gray-500">Closed</span></p>
                 </div>
               </div>
 
               {/* Lead Magnet */}
-              <div className="mt-8 p-6 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-xl shadow-inner">
-                <p className="text-xs uppercase tracking-[0.3em] text-primary mb-3">
+              <div className="mt-8 p-6 bg-gradient-to-br from-[#2D7A8E]/10 via-[#14B8A6]/10 to-[#2D7A8E]/10 border-2 border-[#14B8A6]/30 rounded-xl shadow-lg">
+                <p className="text-xs uppercase tracking-[0.2em] text-[#2D7A8E] font-bold mb-3">
                   Free resource
                 </p>
                 <h3 className="text-2xl font-bold text-secondary mb-3">
                   BIM Coordination Checklist
                 </h3>
-                <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                <p className="text-gray-700 text-sm leading-relaxed mb-5">
                   Download our step-by-step checklist to prepare drawings and models before engaging our coordination team. Share it with your architects, MEP consultants, or PMs to streamline onboarding.
                 </p>
                 <a
                   href="/docs/bim-coordination-checklist.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#2D7A8E] to-[#14B8A6] text-white rounded-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
                 >
                   Download PDF
                 </a>
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="text-xs text-gray-500 mt-3">
                   No email required — just a free resource for your team.
                 </p>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-xl shadow-lg">
-              <h2 className="text-2xl font-bold mb-6 text-secondary">
-                Send Us a Message
-              </h2>
+            <div className="bg-white p-8 lg:p-10 rounded-2xl shadow-xl border border-gray-100">
+              <div className="mb-8">
+                <h2 className="text-3xl font-bold mb-3 text-secondary">
+                  Send Us a Message
+                </h2>
+                <p className="text-gray-600">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+              </div>
 
               {submitted && (
                 <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-start gap-3">
@@ -251,7 +344,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#14B8A6] focus:border-[#14B8A6] transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -267,7 +360,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#14B8A6] focus:border-[#14B8A6] transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -281,7 +374,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#14B8A6] focus:border-[#14B8A6] transition-all"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -296,7 +389,7 @@ export default function Contact() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#14B8A6] focus:border-[#14B8A6] transition-all"
                     placeholder="Your Company Name"
                   />
                 </div>
@@ -310,7 +403,7 @@ export default function Contact() {
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#14B8A6] focus:border-[#14B8A6] transition-all"
                   >
                     <option>BIM Modeling</option>
                     <option>MEP Coordination</option>
@@ -330,7 +423,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows="4"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#14B8A6] focus:border-[#14B8A6] resize-none transition-all"
                     placeholder="Tell us about your project requirements..."
                   ></textarea>
                 </div>
@@ -338,7 +431,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-accent text-white py-3 rounded-lg font-semibold hover:bg-[#d4613a] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-[#2D7A8E] to-[#14B8A6] text-white py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:shadow-[#14B8A6]/30 hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
                   {loading ? 'Sending...' : 'Send Inquiry'}
                 </button>
@@ -379,29 +472,29 @@ export default function Contact() {
 
 
           {/* Location Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-xl text-center">
-              <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+            <div className="bg-gradient-to-br from-[#2D7A8E]/5 to-[#14B8A6]/5 p-6 rounded-xl text-center border border-[#14B8A6]/20 hover:shadow-lg transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#2D7A8E] to-[#14B8A6] rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4 shadow-lg">
                 🚗
               </div>
-              <h3 className="font-bold text-secondary mb-2">Parking Available</h3>
-              <p className="text-gray-600 text-sm">Free visitor parking on-site</p>
+              <h3 className="font-bold text-secondary mb-2 text-lg">Parking Available</h3>
+              <p className="text-gray-600">Free visitor parking on-site</p>
             </div>
 
-            <div className="bg-gradient-to-br from-accent/5 to-accent/10 p-6 rounded-xl text-center">
-              <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+            <div className="bg-gradient-to-br from-[#14B8A6]/5 to-[#2D7A8E]/5 p-6 rounded-xl text-center border border-[#14B8A6]/20 hover:shadow-lg transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#14B8A6] to-[#2D7A8E] rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4 shadow-lg">
                 🚇
               </div>
-              <h3 className="font-bold text-secondary mb-2">Public Transit</h3>
-              <p className="text-gray-600 text-sm">5 min walk from Main Station</p>
+              <h3 className="font-bold text-secondary mb-2 text-lg">Public Transit</h3>
+              <p className="text-gray-600">5 min walk from Main Station</p>
             </div>
 
-            <div className="bg-gradient-to-br from-primary/5 to-primary/10 p-6 rounded-xl text-center">
-              <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4">
+            <div className="bg-gradient-to-br from-[#2D7A8E]/5 to-[#14B8A6]/5 p-6 rounded-xl text-center border border-[#14B8A6]/20 hover:shadow-lg transition-all">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#2D7A8E] to-[#14B8A6] rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-4 shadow-lg">
                 ☕
               </div>
-              <h3 className="font-bold text-secondary mb-2">Meeting Space</h3>
-              <p className="text-gray-600 text-sm">Conference rooms available</p>
+              <h3 className="font-bold text-secondary mb-2 text-lg">Meeting Space</h3>
+              <p className="text-gray-600">Conference rooms available</p>
             </div>
           </div>
         </div>

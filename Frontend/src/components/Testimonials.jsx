@@ -55,11 +55,23 @@ export default function Testimonials() {
   const current = items[currentIndex];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-light to-white relative overflow-hidden">
+    <section className="section-padding bg-gradient-to-b from-gray-50 via-gray-50/80 to-white relative overflow-hidden border-t border-gray-200">
+      {/* Subtle BIM Technical Pattern */}
+      <div className="absolute inset-0 opacity-4">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="blueprint-grid-testimonials" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#14B8A6" strokeWidth="0.2" opacity="0.06"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#blueprint-grid-testimonials)" />
+        </svg>
+      </div>
+      
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-[#14B8A6]/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-[#2D7A8E]/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container-custom relative z-10">

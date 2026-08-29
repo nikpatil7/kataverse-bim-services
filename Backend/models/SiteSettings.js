@@ -4,7 +4,7 @@ const siteSettingsSchema = new mongoose.Schema({
   // Company Information
   companyName: {
     type: String,
-    default: 'Mechtron Global'
+    default: 'KataVerse BIM Services'
   },
   tagline: {
     type: String,

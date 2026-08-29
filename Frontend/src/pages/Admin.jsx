@@ -218,7 +218,7 @@ export default function Admin() {
                     {project.images?.length ? (
                       <div className="flex gap-2 mt-2 flex-wrap">
                         {project.images.map((url, i)=> (
-                          <img key={i} src={url} alt="uploaded" className="w-20 h-20 object-cover rounded border" />
+                          <img key={i} src={url} alt="uploaded" className="w-20 h-20 object-cover rounded border" loading="lazy" />
                         ))}
                       </div>
                     ) : null}
@@ -264,7 +264,7 @@ export default function Admin() {
                       } finally { setLoading(false); }
                     }} className="w-full px-4 py-3 border rounded" />
                     {testimonial.photo ? (
-                      <img src={testimonial.photo} alt="uploaded" className="w-20 h-20 object-cover rounded border mt-2" />
+                      <img src={testimonial.photo} alt="uploaded" className="w-20 h-20 object-cover rounded border mt-2" loading="lazy" />
                     ) : null}
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

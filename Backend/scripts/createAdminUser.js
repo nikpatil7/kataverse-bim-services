@@ -4,13 +4,13 @@ const User = require('../models/User');
 require('dotenv').config();
 
 // Get email and password from command line arguments or use defaults
-const email = process.argv[2] || 'admin@mechtronglobal.com';
+const email = process.argv[2] || 'admin@kataversebim.in';
 const password = process.argv[3] || 'admin123';
 const name = process.argv[4] || 'Admin User';
 
 async function createAdmin() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/mechtron');
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/KataVerseBIMDB');
     console.log('MongoDB Connected');
 
     // Check if admin exists

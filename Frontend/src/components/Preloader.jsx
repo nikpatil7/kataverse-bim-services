@@ -197,7 +197,7 @@ const Preloader = () => {
               <div className="absolute inset-0 bg-[#2d7a8e]/10 blur-3xl" />
 
               <img
-                src="images/branding/kataverse-symbol.png"
+                src="/images/branding/kataverse-symbol.png"
                 alt="KataVerse BIM Services"
                 className="
                   relative

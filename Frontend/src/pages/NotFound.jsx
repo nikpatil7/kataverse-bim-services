@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-secondary via-primary to-[#0a2f47] text-white flex items-center justify-center px-4">
       <SEO
-        title="404 - Page Not Found — Mechtron Global"
+        title="404 - Page Not Found — KataVerse BIM Services"
         description="The page you're looking for doesn't exist."
       />
       

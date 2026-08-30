@@ -2,7 +2,7 @@ import { useState } from 'react';
 import SEO from '../components/SEO';
 import { createProject, createTestimonial } from '../utils/api';
 
-const CATEGORIES = ['Commercial', 'Residential', 'High-Rise', 'Kitchen', 'Industrial', 'Educational'];
+const CATEGORIES = ['Commercial', 'Residential', 'High-Rise', 'Kitchen', 'Industrial', 'Educational', 'Healthcare', 'Others'];
 
 export default function Admin() {
   const [authed, setAuthed] = useState(!!localStorage.getItem('adminToken'));

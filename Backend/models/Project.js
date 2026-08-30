@@ -18,7 +18,7 @@ const projectSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['Commercial', 'Residential', 'High-Rise', 'Kitchen', 'Industrial', 'Educational']
+    enum: ['Commercial', 'Residential', 'High-Rise', 'Kitchen', 'Industrial', 'Educational', 'Healthcare', 'Others']
   },
   description: {
     type: String,
@@ -42,7 +42,7 @@ const projectSchema = new mongoose.Schema({
       type: Number,
       min: 1,
       max: 5,
-      default: 5
+      default: null
     }
   },
   featured: {

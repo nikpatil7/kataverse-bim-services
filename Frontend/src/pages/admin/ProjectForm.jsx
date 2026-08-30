@@ -3,7 +3,7 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import { getProjectById, createProject } from '../../utils/api';
 import { useToast } from '../../components/ui/ToastProvider';
 
-const CATEGORIES = ['Commercial', 'Residential', 'High-Rise', 'Kitchen', 'Industrial', 'Educational'];
+const CATEGORIES = ['Commercial', 'Residential', 'High-Rise', 'Kitchen', 'Industrial', 'Educational', 'Healthcare', 'Others'];
 
 export default function ProjectForm() {
   const { id } = useParams();
@@ -22,7 +22,7 @@ export default function ProjectForm() {
     metrics: '',
     clientName: '',
     clientTestimonial: '',
-    clientRating: 5,
+    clientRating: '',
     featured: false,
     images: [],
     caseStudyUrl: '',
@@ -48,7 +48,7 @@ export default function ProjectForm() {
         metrics: proj.metrics ? JSON.stringify(proj.metrics, null, 2) : '',
         clientName: proj.client?.name || '',
         clientTestimonial: proj.client?.testimonial || '',
-        clientRating: proj.client?.rating || 5,
+        clientRating: proj.client?.rating ?? '',
         featured: proj.featured || false,
         images: proj.images || [],
         caseStudyUrl: proj.caseStudyUrl || '',
@@ -93,6 +93,18 @@ export default function ProjectForm() {
         }
       }
 
+      const clientPayload = {
+        name: formData.clientName.trim() || undefined,
+        testimonial: formData.clientTestimonial.trim() || undefined,
+      };
+
+      if (formData.clientRating !== '' && formData.clientRating !== null && formData.clientRating !== undefined) {
+        const ratingValue = Number(formData.clientRating);
+        if (!Number.isNaN(ratingValue) && ratingValue >= 1 && ratingValue <= 5) {
+          clientPayload.rating = ratingValue;
+        }
+      }
+
       const payload = {
         title: formData.title.trim(),
         category: formData.category,
@@ -100,11 +112,7 @@ export default function ProjectForm() {
         tags: formData.tags ? formData.tags.split(',').map((t) => t.trim()).filter(Boolean) : [],
         metrics: metricsObj,
         images: formData.images,
-        client: {
-          name: formData.clientName.trim() || undefined,
-          testimonial: formData.clientTestimonial.trim() || undefined,
-          rating: Number(formData.clientRating),
-        },
+        client: Object.keys(clientPayload).length ? clientPayload : undefined,
         featured: formData.featured,
         caseStudyUrl: formData.caseStudyUrl.trim() || undefined,
       };

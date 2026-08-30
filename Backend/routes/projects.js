@@ -99,7 +99,7 @@ router.get('/:id', async (req, res) => {
 // Create new project (admin route)
 router.post('/', authenticateToken, async (req, res) => {
   try {
-    const allowedCategories = ['Commercial', 'Residential', 'High-Rise', 'Kitchen', 'Industrial', 'Educational'];
+    const allowedCategories = ['Commercial', 'Residential', 'High-Rise', 'Kitchen', 'Industrial', 'Educational', 'Healthcare', 'Others'];
     const {
       title,
       category,
@@ -122,7 +122,7 @@ router.post('/', authenticateToken, async (req, res) => {
     if (!description || typeof description !== 'string' || description.trim().length < 10) {
       errors.push('Description is required (min 10 characters).');
     }
-    if (client && client.rating !== undefined) {
+    if (client && client.rating !== undefined && client.rating !== null && client.rating !== '') {
       const r = Number(client.rating);
       if (!(r >= 1 && r <= 5)) errors.push('Client rating must be between 1 and 5.');
     }
